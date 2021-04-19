@@ -14,9 +14,11 @@ IO::Socket::SSL v2.070.
 
 Make sure to install these required modules then, pp_autolink -o sendEmail.exe sendEmail.pl
 
+Please note, pp (PAR Packager) fails to link the required libraries, use pp_autolink.
+
 Test sendEmail.exe with -o tls=yes to confirm the required DLLs are linked properly.
 
-If successful, the packed executable will support TLSv1.2 abd TLSv1.3.
+If successful, the packed executable will support TLSv1.2 and TLSv1.3.
 
 Please note, if you are having trouble with SSL certificate verification (i.e. invalid certificates are being used on the STMP server), then look for the below line and comment it.
 IO::Socket::SSL::set_defaults(SSL_verify_mode => 0). Please research security implications of such change (MitM attacks, etc).
